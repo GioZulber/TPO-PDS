@@ -7,6 +7,9 @@ import java.util.UUID;
 
 public class EstadoEnEspera extends Estado{
 
+    public EstadoEnEspera() {super();}
+
+    // Le agrega un identificador único al Pedido.
     @Override
     public void activar(Pedido pedido) {
         pedido.setIdOrden(UUID.randomUUID().toString());

@@ -25,21 +25,23 @@ public class Pedido {
 
     }
 
+    //Delega el avanzar estado a la clase Estado
+    public void avanzarEstado(){
+        this.estadoActual.avanzar(this);
+    }
+
+    // El nuevo estado se setea como el estadoActual y se activan las funcionalidades
+    public void cambiarEstado(Estado nuevoEstado){
+        this.estadoActual = nuevoEstado;
+        nuevoEstado.activar(this);
+    }
+
     public void agregarProducto(Producto producto){
         this.productos.add(producto);
     }
 
     public void sacarProducto(Producto producto){
         this.productos.remove(producto);
-    }
-
-    public void avanzarEstado(){
-        this.estadoActual.avanzar(this);
-    }
-
-    public void cambiarEstado(Estado nuevoEstado){
-        this.estadoActual = nuevoEstado;
-        nuevoEstado.activar(this);
     }
 
     public double calcularTotal(){

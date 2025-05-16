@@ -4,6 +4,7 @@ import notificaciones.MedioNotificacion;
 import pagos.MetodoPago;
 
 public class Cliente extends Usuario {
+
     private MetodoPago metodoPago;
     public Cliente(String nombre, MedioNotificacion medioNotificacion, MetodoPago metodoPago) {
         super(nombre, medioNotificacion);

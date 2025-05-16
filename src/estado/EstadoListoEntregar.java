@@ -8,6 +8,9 @@ import usuarios.EmpleadoMesero;
 
 public class EstadoListoEntregar extends Estado{
 
+    public EstadoListoEntregar() {super();}
+
+    //Envía notificaciones al mesero y al cliente
     @Override
     public void activar(Pedido pedido) {
         EmpleadoMesero mesero = pedido.getMesero();

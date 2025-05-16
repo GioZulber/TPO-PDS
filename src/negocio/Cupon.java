@@ -9,7 +9,7 @@ public class Cupon {
     private LocalDate fechaInicio;
     private LocalDate fechaVencimiento;
 
-    public Cupon(double porcentajeDescuento, LocalDate fechaInicio, LocalDate fechaVencimiento){
+    public Cupon(double porcentajeDescuento, LocalDate fechaInicio, LocalDate fechaVencimiento) {
         this.porcentajeDescuento = porcentajeDescuento;
         this.fechaInicio = fechaInicio;
         this.fechaVencimiento = fechaVencimiento;
@@ -20,6 +20,8 @@ public class Cupon {
         return porcentajeDescuento;
     }
 
+    // Se valida comparando si la fecha actual se encuentra en el
+    // rango de fechas de inicio y vencimiento
     public boolean validar(){
         LocalDate fechaActual = LocalDate.now();
         return !fechaActual.isBefore(fechaInicio) && !fechaActual.isAfter(fechaVencimiento);

@@ -4,11 +4,13 @@ import negocio.Pedido;
 
 public class EstadoEnPreparacion extends Estado{
 
+    public EstadoEnPreparacion() {super();}
+
 
     @Override
     public void activar(Pedido pedido) {
         // Aún no tiene un funcionamiento específico, pero a futuro se
-        // podrían disparar ciertos eventos de ser necesario
+        // podrían disparar nuevo eventos de ser necesario
     }
 
     @Override

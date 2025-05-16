@@ -4,6 +4,8 @@ import negocio.Pedido;
 
 public class EstadoModificable extends Estado {
 
+    public EstadoModificable() {super();}
+
     @Override
     public void activar(Pedido pedido) {
         // Aún no tiene un funcionamiento específico, pero a futuro se

@@ -7,6 +7,9 @@ import notificaciones.TipoNotificacion;
 
 public class EstadoEntregado extends Estado{
 
+    public EstadoEntregado() {super();}
+
+    // Se crea y envía la factura.
     @Override
     public void activar(Pedido pedido) {
         Notificador notificador = new Notificador(new Email());
