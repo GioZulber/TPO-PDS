@@ -3,7 +3,7 @@ import notificaciones.App;
 import notificaciones.Email;
 import notificaciones.MedioNotificacion;
 import pagos.MetodoPago;
-import pagos.PagoController;
+import controllers.ControllerPago;
 import pagos.TarjetaCredito;
 import pagos.TarjetaDebito;
 import usuarios.*;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         // Creacion del menu
-        Producto coca = new Bebida("Coca Cola", 2500);
+        /*Producto coca = new Bebida("Coca Cola", 2500);
         Producto agua = new Bebida("Agua", 2500);
         Producto cerveza = new Bebida("Cerveza", 3500);
 
@@ -72,7 +72,7 @@ public class Main {
         LocalDate fechaVencimientoC1 = LocalDate.of(2025, 5, 25);
         Cupon cupon10 = new Cupon(0.1, fechaInicioC1, fechaVencimientoC1);
 
-        PagoController pagoController = new PagoController();
+        ControllerPago pagoController = new ControllerPago();
 
         Pedido pedidoCliente1 = new Pedido(cliente1, mesero1);
         Pedido pedidoCliente2 = new Pedido(cliente2, mesero2);
@@ -118,6 +118,6 @@ public class Main {
         System.out.println("Estado del pedido" + pedidoCliente2.getEstadoActual().toString());
         mesero1.avanzarEstadoPedido(pedidoCliente2);
         System.out.println("Estado del pedido" + pedidoCliente2.getEstadoActual().toString());
-
+        */
     }
 }

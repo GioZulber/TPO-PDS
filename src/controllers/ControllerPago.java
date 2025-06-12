@@ -1,11 +1,11 @@
-package pagos;
+package controllers;
 
 import negocio.Cupon;
 import negocio.Pedido;
 
-public class PagoController {
+public class ControllerPago {
 
-    public PagoController() {
+    public ControllerPago() {
 
     }
     // Recibe un pedido. Intenta pargarlo con el método de pago del

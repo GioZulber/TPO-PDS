@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class Menu {
 
+    // ES UN REPOSITORIO DE PRODUCTOS
+
     private Set<Producto> productos;
 
     public Menu(){
@@ -21,5 +23,9 @@ public class Menu {
 
     public Set<Producto> getProductos() {
         return productos;
+    }
+
+    public Producto buscarProductoPorId(int id){
+        return this.productos.stream().filter(p->p.getId() == id).findFirst().orElse(null) ;
     }
 }

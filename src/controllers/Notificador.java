@@ -1,5 +1,8 @@
-package notificaciones;
+package controllers;
 
+import notificaciones.MedioNotificacion;
+import notificaciones.Notificacion;
+import notificaciones.TipoNotificacion;
 import usuarios.Usuario;
 
 public class Notificador {

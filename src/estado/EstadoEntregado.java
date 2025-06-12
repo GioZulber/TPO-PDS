@@ -2,8 +2,10 @@ package estado;
 
 import negocio.Pedido;
 import notificaciones.Email;
-import notificaciones.Notificador;
+import controllers.Notificador;
 import notificaciones.TipoNotificacion;
+
+import java.util.List;
 
 public class EstadoEntregado extends Estado{
 
@@ -22,8 +24,15 @@ public class EstadoEntregado extends Estado{
         // NO HAY ESTADO SIGUIENTE
     }
 
+    @Override
+    public double getTiempoEspera(Pedido pedido, List<Pedido> pedidos) {
+        return 0;
+    }
 
-
+    @Override
+    public boolean cancelar(Pedido pedido) {
+        return false;
+    }
 
 
 }

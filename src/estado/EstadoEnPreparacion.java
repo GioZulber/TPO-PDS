@@ -1,6 +1,9 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
+
+import java.util.List;
 
 public class EstadoEnPreparacion extends Estado{
 
@@ -16,6 +19,19 @@ public class EstadoEnPreparacion extends Estado{
     @Override
     public void avanzar(Pedido pedido) {
         pedido.cambiarEstado(new EstadoListoEntregar());
+    }
+
+    @Override
+    public double getTiempoEspera(Pedido pedido, List<Pedido> pedidos) {
+        return pedido.getProductos().stream().mapToDouble(Producto::getTiempoPreparacion).sum();
+    }
+
+    @Override
+    public boolean cancelar(Pedido pedido) {
+        double montoReembolso = pedido.getTotalPedido() * 0.75;
+        System.out.println("Pedido cancelado. Se reembolsa el 75%: $" + montoReembolso);
+        pedido.cambiarEstado(new EstadoCancelado());
+        return true;
     }
 
 

@@ -2,9 +2,11 @@ package estado;
 
 import negocio.Pedido;
 
-public class EstadoModificable extends Estado {
+import java.util.List;
 
-    public EstadoModificable() {super();}
+public class EstadoInicial extends Estado {
+
+    public EstadoInicial() {super();}
 
     @Override
     public void activar(Pedido pedido) {
@@ -16,5 +18,15 @@ public class EstadoModificable extends Estado {
     @Override
     public void avanzar(Pedido pedido) {
         pedido.cambiarEstado(new EstadoEnEspera());
+    }
+
+    @Override
+    public double getTiempoEspera(Pedido pedido, List<Pedido> pedidos) {
+        return 0;
+    }
+
+    @Override
+    public boolean cancelar(Pedido pedido) {
+        return false;
     }
 }
