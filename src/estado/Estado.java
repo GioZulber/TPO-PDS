@@ -1,15 +1,14 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
 
 import java.util.List;
 
 public abstract class Estado {
 
     // Gestión de Estado del pedido con patrón de diseño State
-    public Estado(){
-
-    }
+    public Estado(){}
 
     // Dispara las funcionalidades del estado
     public abstract void activar(Pedido pedido);
@@ -20,4 +19,6 @@ public abstract class Estado {
     public abstract double getTiempoEspera(Pedido pedido, List<Pedido> pedidos);
 
     public abstract boolean cancelar(Pedido pedido);
+
+    public abstract void agregarProducto(Pedido pedido, Producto producto);
 }

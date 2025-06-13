@@ -12,7 +12,6 @@ public class  Producto {
     private Set<IngredienteAlergenico> ingredientesAlergenicos;
     private double tiempoPreparacion;
 
-
     public Producto(int id, String nombre, Categoria categoria, double precio, double tiempoPreparacion){
         this.id = id;
         this.nombre = nombre;
@@ -29,9 +28,21 @@ public class  Producto {
     public int getId() {
         return id;
     }
+    
+    public String getNombre() {
+        return nombre;
+    }
 
     public double getTiempoPreparacion() {
         return tiempoPreparacion;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Set<IngredienteAlergenico> getIngredientesAlergenicos() {
+        return ingredientesAlergenicos;
     }
 
     public void agregarIngredienteAlergenico(IngredienteAlergenico i){
@@ -41,7 +52,6 @@ public class  Producto {
     public void sacarIngredienteAlergenico(IngredienteAlergenico i){
         this.ingredientesAlergenicos.remove(i);
     }
-
 
     @Override
     public String toString() {

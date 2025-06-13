@@ -1,6 +1,7 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
 
 import java.util.List;
 
@@ -27,5 +28,10 @@ public class EstadoCancelado extends Estado{
     @Override
     public boolean cancelar(Pedido pedido) {
         return false;
+    }
+
+    @Override
+    public void agregarProducto(Pedido pedido, Producto producto) {
+        throw new IllegalStateException("No se pueden agregar productos en cancelado");
     }
 }

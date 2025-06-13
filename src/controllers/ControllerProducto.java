@@ -1,6 +1,7 @@
 package controllers;
 
 import negocio.Categoria;
+import negocio.IngredienteAlergenico;
 import negocio.Menu;
 import negocio.Producto;
 
@@ -18,6 +19,14 @@ public class ControllerProducto {
         menu.agregarProducto(producto);
     }
 
+    public void agregarIngredienteAlergenico(int idProducto, String nombreIngrediente){
+        Producto producto = this.menu.buscarProductoPorId(idProducto);
+        if (producto != null){
+            IngredienteAlergenico ingrediente = new IngredienteAlergenico(nombreIngrediente);
+            producto.agregarIngredienteAlergenico(ingrediente);}
+
+    }
+
     public void eliminarProducto(int idProducto){
         Producto producto = this.menu.buscarProductoPorId(idProducto);
         if (producto != null){
@@ -29,4 +38,6 @@ public class ControllerProducto {
         for ( Producto producto : menu.getProductos())
             System.out.println(producto);   //usa el toString()
     }
+
+
 }

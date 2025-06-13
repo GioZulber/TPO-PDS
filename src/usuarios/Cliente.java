@@ -18,4 +18,8 @@ public class Cliente extends Usuario {
     public void setMetodoPago(MetodoPago metodoPago) {
         this.metodoPago = metodoPago;
     }
+    
+    public boolean realizarPago(double monto) {
+        return this.metodoPago.pagar(monto);
+    }
 }

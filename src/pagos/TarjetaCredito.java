@@ -14,7 +14,7 @@ public class TarjetaCredito extends MetodoPago {
 
     @Override
     public boolean pagar(double monto) {
-        if(limite >= gastado){
+        if(limite >= gastado + monto){
             this.setGastado(gastado + monto);
             return true;
         }
@@ -24,5 +24,17 @@ public class TarjetaCredito extends MetodoPago {
 
     public void setGastado(double gastado) {
         this.gastado = gastado;
+    }
+    
+    public double getLimiteDisponible() {
+        return limite - gastado;
+    }
+    
+    public double getGastado() {
+        return gastado;
+    }
+    
+    public double getLimite() {
+        return limite;
     }
 }

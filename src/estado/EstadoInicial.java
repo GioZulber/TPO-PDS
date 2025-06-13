@@ -1,6 +1,7 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
 
 import java.util.List;
 
@@ -12,7 +13,6 @@ public class EstadoInicial extends Estado {
     public void activar(Pedido pedido) {
         // Aún no tiene un funcionamiento específico, pero a futuro se
         // podrían disparar ciertos eventos de ser necesario
-
     }
 
     @Override
@@ -28,5 +28,10 @@ public class EstadoInicial extends Estado {
     @Override
     public boolean cancelar(Pedido pedido) {
         return false;
+    }
+
+    @Override
+    public void agregarProducto(Pedido pedido, Producto producto) {
+        pedido.agregarProducto(producto);
     }
 }

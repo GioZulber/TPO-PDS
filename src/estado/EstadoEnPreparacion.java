@@ -34,5 +34,8 @@ public class EstadoEnPreparacion extends Estado{
         return true;
     }
 
-
+    @Override
+    public void agregarProducto(Pedido pedido, Producto producto) {
+        throw new IllegalStateException("No se pueden agregar productos en preparación");
+    }
 }

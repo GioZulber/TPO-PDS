@@ -1,6 +1,7 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
 import notificaciones.Email;
 import controllers.Notificador;
 import notificaciones.TipoNotificacion;
@@ -34,5 +35,8 @@ public class EstadoEntregado extends Estado{
         return false;
     }
 
-
+    @Override
+    public void agregarProducto(Pedido pedido, Producto producto) {
+        throw new IllegalStateException("No se pueden agregar productos en entregado");
+    }
 }

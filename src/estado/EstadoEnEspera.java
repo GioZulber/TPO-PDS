@@ -1,6 +1,7 @@
 package estado;
 
 import negocio.Pedido;
+import negocio.Producto;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,7 +27,7 @@ public class EstadoEnEspera extends Estado{
         long cantidadPedidos = pedidos.stream().filter(p -> (p.getEstadoActual() instanceof EstadoEnEspera)
                 || (p.getEstadoActual() instanceof EstadoEnPreparacion)).count();
         if (cantidadPedidos >= 10)
-            return (cantidadPedidos/10)*20 + 5;
+            return ((double) cantidadPedidos /10)*20 + 5;
         return 5;
     }
 
@@ -38,5 +39,16 @@ public class EstadoEnEspera extends Estado{
         return true;
     }
 
-
+    @Override
+    public void agregarProducto(Pedido pedido, Producto producto) {
+        pedido.agregarProducto(producto);
+        
+        // Usar el método del pedido directamente (sin acoplamiento a controllers)
+        boolean exito = pedido.pagarProductoAdicional(producto);
+        if (!exito) {
+            // Si el pago falla, remover el producto del pedido
+            pedido.sacarProducto(producto);
+            throw new IllegalStateException("No se pudo procesar el pago del producto adicional");
+        }
+    }
 }
